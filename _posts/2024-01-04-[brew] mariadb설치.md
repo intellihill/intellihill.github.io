@@ -4,7 +4,7 @@ tag: brew
 ---
 ***
 <br>
-# 설치 명령어
+설치 명령어
 <pre>
 <code>
 brew install mariadb@10.6
