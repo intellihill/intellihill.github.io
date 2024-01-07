@@ -2,15 +2,15 @@ domain: intellihill.github.io
 url: http://intellihill.github.io
 
 collections:
-  authors:
+  tags:
     output: true
 
 defaults:
   - scope:
       path: ""
-      type: "authors"
+      type: "tags"
     values:
-      layout: "author"
+      layout: "tag"
   - scope:
       path: ""
       type: "posts"
