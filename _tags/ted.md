@@ -1,5 +1,5 @@
 ---
-short_name: ted
-name: Ted Doe
+short_name: markdown
+name: markdown
 ---
 Ted has been eating fruit since he was baby.
