@@ -9,7 +9,7 @@ tag: vuetify
 가장 상위컴포넌트의 App.vue로 옮기는게 좋을거 같다는 판단이 들었다
 <br>
 
-```default.vue
+```
 <template>
   <v-app>
     <NavigationBar />
@@ -17,12 +17,13 @@ tag: vuetify
 </template>
 
 ```
+<br>
 home/default.vue에 위치해있던 navigationBar를
 <br>
 root디렉토리의 App.vue로 옮기는 중 오류가 발생한다.
 <br>
 
-```default.vue
+```
 <template>
   <JejuroBarVue />
   <router-view />
@@ -40,7 +41,7 @@ Vuetify에서는 `v-app` 컴포넌트가 애플리케이션의 루트 레이아�
 따라서 최상위 템플릿에서 `v-app` 컴포넌트로 앱을 감싸주어야 한다.
 <br>
 
-```App.vue
+```
 <template>
   <v-app>
 	<JejuroBarVue />
@@ -48,5 +49,6 @@ Vuetify에서는 `v-app` 컴포넌트가 애플리케이션의 루트 레이아�
   </v-app>
 </template>
 ```
+<br>
 이제 문제 없이 돌아간다.
 nice
