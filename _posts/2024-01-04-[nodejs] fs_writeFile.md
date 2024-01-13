@@ -6,6 +6,41 @@ tag: nodejs
 <br>
 [sourcecode](https://github.com/nodejs/node/blob/v21.5.0/lib/fs.js)  
 [출처:노드공홈](https://nodejs.org/api/fs.html)
+<br>
+
+To use the callback and sync API
+```
+const fs = require('fs'); 
+```
+<br>
+To make diretory
+```
+if (!fs.existsSync(folderPath)) {
+  fs.mkdirSync(folderPath)
+} else {
+  console.log("success to make directory")
+}
+```
+<br>
+
+To make json file
+```
+fs.writeFile(pathTest, JSON.stringify(modifiedData), (err) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log('success to make json');
+    // 권한 부여(777)
+    fs.chmod(pathTest, 0o777, (chmodErr) => {
+      if (chmodErr) {
+        console.error(chmodErr);
+      } else {
+        console.log('success to chmod');
+      }
+    });
+  }
+});
+```
 
 
 <!-- todo  
