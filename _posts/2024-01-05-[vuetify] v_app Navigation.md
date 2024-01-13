@@ -36,9 +36,9 @@ Uncaught Error: [Vuetify] Could not find injected layout 에러가 뜬다.
 
 Vuetify는 애플리케이션의 구조를 정의하기 위해 레이아웃을 사용한다.
 <br>
-Vuetify에서는 `v-app` 컴포넌트가 애플리케이션의 루트 레이아웃을 정의하는 역할을 한다.
+Vuetify에서는 v-app 컴포넌트가 애플리케이션의 루트 레이아웃을 정의하는 역할을 한다.
 <br>
-따라서 최상위 템플릿에서 `v-app` 컴포넌트로 앱을 감싸주어야 한다.
+따라서 최상위 템플릿에서 v-app 컴포넌트로 앱을 감싸주어야 한다.
 <br>
 
 ```
