@@ -28,7 +28,7 @@ shift + command + g
 
 /opt/homebrew/opt/mariadb@10.6/bin
 finder에서 "shift + command + g" 단축키를 누르면
-경로를 입력할 수 있음
+경로를 입력할 수 있다
 ```
 <br>
-이렇게하면 데이터베이스 홈을 설정할 수 있음
+이렇게하면 데이터베이스 홈을 설정할 수 있다
