@@ -4,6 +4,8 @@ tag: nodejs
 ---
 ***
 
+[출처](https://nodejs.org/en/learn/asynchronous-work/the-nodejs-event-emitter)
+<br>
 ## The Node.js Event Emitter
 
 On the backend side, Node.js offers us the option to build a similar system using  
