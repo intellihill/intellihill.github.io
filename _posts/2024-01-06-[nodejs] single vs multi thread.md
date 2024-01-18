@@ -4,7 +4,6 @@ tag: nodejs
 ---
 ***
 
-[출처](https://nodejs.org/en/learn/asynchronous-work/the-nodejs-event-emitter)
 <br>
 ## single thread & multi thread
 
