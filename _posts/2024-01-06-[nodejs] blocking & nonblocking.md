@@ -30,5 +30,9 @@ fs.readFile('/file.md', (err, data) => {
 });
 ```
 <br>
-
-
+The first example appears simpler than the second but has the disadvantage of   
+the second line blocking the execution of any additional JavaScript until the  
+entire file is read.
+Note that in the synchronous version if an error is thrown it will need to be caught   
+or the process will crash. In the asynchronous version, it is up to the author to  
+decide whether an error should throw as shown.
