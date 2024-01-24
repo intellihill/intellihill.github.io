@@ -22,14 +22,12 @@ singleThreadedOperation();
 console.log("End of single-threaded code")
 ```
 <br>
-
 ```
 // Single-threaded operation started
 // End of single-threaded code
 // SIngle-threaded operation completed
 ```
-
-
+<br>
 ```
 //multi thread
 const { Wokrer, isMainThread, parentPort } = require('worker_threads')
