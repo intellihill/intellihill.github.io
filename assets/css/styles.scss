@@ -51,10 +51,15 @@ ul {
 .wrapper {
     max-width: 600px;
     margin: auto;
+    min-height: calc(100vh - 10rem);  // footer 높이를 빼준다
     padding: 60px 30px 60px 30px;
     @media screen and (max-width: $br) {
         padding: 20px;
     }
+}
+
+.footer{
+    height: 10rem;  // footer 높이
 }
 
 
