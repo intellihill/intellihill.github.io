@@ -8,6 +8,7 @@ tag: database
 ```
 mysql -u root -p
 ```
+<br>
 
 ```
 show databases;
