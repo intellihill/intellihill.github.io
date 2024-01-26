@@ -50,10 +50,18 @@ doSomething();
 
 #### Callbacks
 
+너는 모른다 언제 사용자가 click button을 눌렀는지. 그래서 너는 click event를 다루는 event를 정의한다.  
+이 event handler는 event가 작동됐을 때 called되도록 기능을 수락한다 
+<br>
+```
+document.getElementById('button').addEventListener('click', () => {
+  // item clicked
+});
+```
+<br>
 
-
-
-
+이것을 callback이라고 부른다.  
+callback은 다른 기능에게 값을 전달해주는 간단한 기능이고 event가 발생했을 때 유일하게 실행될것이다.
 
 
 
