@@ -16,7 +16,7 @@ Path를 따로 설정해주면된다.
 하지만 파일찾기로 Homebrew안의 설치 경로의 bin폴더를 설정하려고해도 Finder에서는
 기본적으로 root directory에 접근이 불가능하다.  
 
-finder에서
+finder에서  
 ```
 // finder에서 경로를 입력할 수 있도록 창을 띄움
 shift + command + g 
