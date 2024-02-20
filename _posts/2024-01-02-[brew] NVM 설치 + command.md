@@ -64,4 +64,21 @@ lts/hydrogen -> v18.19.0 (-> N/A)
 ```
 nvm install lts/boron
 ```
+<br>
 
+프로젝트에 원하는 노드버전 지정하기
+
+```
+// nvmrc라는 파일을 만든다
+~touch .nvmrc
+~code .nvmrc
+// .nvmrc에 쓰고자하는 노드버전 저장하기
+v18.19.0
+//nvm use를 사용하면 지정되어있는 버전으로 사용된다
+~nvm use
+```
+<br>
+```
+// 위의 명령어를 간단하게 쓰기
+node -v > .nvmrc
+```
