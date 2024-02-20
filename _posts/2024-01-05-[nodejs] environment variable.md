@@ -24,6 +24,16 @@ console.log(USER_KEY)
 // test
 ```
 <br>
-이런 식으로 node를 실행하기전에 변수를 주입시킬 수 있다.
+이런 방식으로 node가 실행되면서 변수를 주입시킬 수 있다.  
 
-
+Node.js를 실행할 때 환경파일을 특정하는 플래그인 `--env-file`를 사용할 수 있다.
+<br>
+```
+# .env file
+PORT=3000
+```
+<br>
+```
+// .env파일을 set한 환경변수와 함께 app.js를 실행하기
+~node --env-file=.env app.js
+```
