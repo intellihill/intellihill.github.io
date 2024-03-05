@@ -18,4 +18,4 @@ v-app-bar가 포함되어있는 navigation bar를 만들고 컴퍼넌트를 App.
 <br>
 그런데 router-view로 가지고온 컴퍼넌트 위에 마운트되는것을 확인할 수 있었다.
 <br>
-이 문제를 풀기위하여 router-view가 올라가는 컴퍼넌트에 vuetify와
+이 문제를 풀기위하여 router-view가 올라가는 컴퍼넌트에 vuetify와 
