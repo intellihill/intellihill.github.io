@@ -9,7 +9,7 @@ This page tells you a little bit about me.
 이동통신사 *t AICC 풀스텍
 
 Frontend
-- react를 이용하여 관리자페이지 (주소검색)
+- react를 이용하여 관리자페이지 (주소검색, 대화시나리오, 회원관리)
 - vue를 이용한 시나리오 맵
 
 Backend
