@@ -43,7 +43,10 @@ tag: quasar
 ```
 <br>
 
-QSelect API
+### QSelect API
+- 사용한 API
+
+#### Props
 
 `filled`: Boolean
 Use 'filled' design for the field
@@ -63,6 +66,27 @@ Debounce the input model update with an amount of milliseconds (also affects the
 
 `options`: Array
 Abvailable options that the user can select from. For best performance freeze the list of options.
+
+#### Events
+
+`@filter`: (inputValue, doneFn, abortFn) => void
+Emitted when user wants to filter a value
+
+`@input-value`: (value) => void
+Emitted when the value in the text input changes
+
+<br>
+
+[출처-mdn-Array.prototype.reduce()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+
+```
+const stringOptions = [
+  'gmail.com', 'naver.com', 'kakao.com'
+].reduce((acc:any, opt:string) => {
+  acc.push(opt)
+  return acc
+}, [])
+```
 
 
 
