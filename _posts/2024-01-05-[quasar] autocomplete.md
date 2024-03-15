@@ -51,28 +51,28 @@ tag: quasar
 `filled`: Boolean
 Use 'filled' design for the field
 
-`use-input`: Bollean
+use-input: Bollean
 Use an input tag where users can type
 
-`hide-selected`: Boolean
+hide-selected: Boolean
 Hids selection; Use the underlying input tag to hold the label(instead of showing it to the right of the input) of the selected option;
 Only works for non 'multiple' Selects
 
-`fill-input`: Boolean
+fill-input: Boolean
 Fills the input with current value; Useful along with 'hide-selected"; Does NOT works along withe 'multiple' selection
 
-`input-debounce`: Number | String
+input-debounce: Number | String
 Debounce the input model update with an amount of milliseconds (also affects the 'filter' event, if used)
 
-`options`: Array
+options: Array
 Abvailable options that the user can select from. For best performance freeze the list of options.
 
 #### Events
 
-`@filter`: (inputValue, doneFn, abortFn) => void
+@filter: (inputValue, doneFn, abortFn) => void
 Emitted when user wants to filter a value
 
-`@input-value`: (value) => void
+@input-value: (value) => void
 Emitted when the value in the text input changes
 
 <br>
