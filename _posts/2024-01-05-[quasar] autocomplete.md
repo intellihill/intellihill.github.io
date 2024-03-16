@@ -13,7 +13,7 @@ tag: quasar
 <br>
 
 ## 문제점
-- quasar 2ver에서의 문제인지는 모르겠지만 `<q-select>`에서 use-input 옵션을 사용하면 v-model에 실시간 바인딩이 안된다.
+- quasar 2ver에서의 문제인지는 모르겠지만 <q-select>에서 use-input 옵션을 사용하면 v-model에 실시간 바인딩이 안된다.
 
 <br>
 
@@ -48,7 +48,7 @@ tag: quasar
 
 #### Props
 
-`filled`: Boolean
+filled: Boolean
 Use 'filled' design for the field
 
 use-input: Bollean
@@ -78,6 +78,8 @@ Emitted when the value in the text input changes
 <br>
 
 [출처-mdn-Array.prototype.reduce()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+
+
 
 ```
 const stringOptions = [
