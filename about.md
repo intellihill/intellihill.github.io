@@ -22,3 +22,9 @@ Backend
 POSTMAN API 목록화 
 - API명세서가 존재하지 않아 소스의 endpoint를 잡아 모든 API를 POSTMAN으로 목록화( prescript를 이용한 암호화 처리 )
 - 정상 작동하지 않는 통합회원가입, 로그인 부분 flowchart상 문제를 잡고 풀스텍으로 수정 개발
+
+// 이동통신사 **t universe
+// Frontend 
+// - vue를 이용한 관리자 페이지 개발, 운영
+// OpenApiGeneration을 이용한 API개발
+
