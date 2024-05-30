@@ -55,3 +55,32 @@ Object.defineProperty(obj, 'propertyName', {
 });
 console.log(obj.propertyName); // 'value'
 ```
+
+### 접근자 프로퍼티
+
+```
+const obj = {
+    _property: 'initial value',
+    get property() {
+        return this._property;
+    },
+    set property(value) {
+        this._property = value;
+    }
+};
+
+console.log(obj.property); // 'initial value'
+obj.property = 'new value';
+console.log(obj.property); // 'new value'
+```
+<br>
+접근자 프로퍼티는 get과 set 키워드를 사용하여 정의하며, 이를 통해 특정 프로퍼티를 읽거나 쓸 때 호출되는 함수를 지정할 수 있다.
+
+프로퍼티 관련 메소드
+Object.keys(obj): 객체의 열거 가능한 프로퍼티 키를 배열로 반환한다.
+Object.values(obj): 객체의 열거 가능한 프로퍼티 값을 배열로 반환한다.
+Object.entries(obj): 객체의 열거 가능한 프로퍼티 키-값 쌍을 배열로 반환한다.
+프로퍼티는 자바스크립트에서 객체를 구성하는 기본적인 단위로, 객체의 상태나 동작을 정의하는 데 사용된다.
+
+
+cf. 함수도 프로퍼티가 될 수 있다.
