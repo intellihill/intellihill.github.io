@@ -1,5 +1,5 @@
 ---
-short_name: javasript
+short_name: javascript
 name: javascript
 ---
 
