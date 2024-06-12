@@ -4,11 +4,15 @@ tag: javascript
 ---
 ***
 
-# Closure
-- lexical scope 참조
+# this
+this는 객체 자신의 프로퍼티나 메서드를 참조하기 위한 자기참조변수이다.
+this가 가리키는 값은 함수 호출 방식에 따라 동적으로 결정된다.
 
-## 정의
+## 동적 결정
 
-- 외부 함수보다 중첩 함수가 더 오래 유지되는 경우 중첩 함수가 이미 생명 주기가 종료된 외부 함수의 변수를 참조할 수 있다 
-- A closure is the combinaion of a function and the lexical envionment within which that function was declared.
+일반 함수로서 호출 : 전역 객체
+메서드로서 호출 : 메서드를 호출한 객체(마침표 앞의 객체)
+생성자 함수로서 호출 : 생성자 함수가 (미래에) 생성할 인스턴스
+
+
 
