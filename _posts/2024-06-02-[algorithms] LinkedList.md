@@ -41,7 +41,7 @@ export default class LinkedList {
 
   prepend(value) {
     // 새로운 노드를 생성하고, 현재 head를 next로 설정한다.
-    const newNode = new LinkedLisNode(value, this.head);
+    const newNode = new LinkedListNode(value, this.head);
     // head에 newNode를 할당한다.
     this.head = newNode;
 
@@ -54,3 +54,26 @@ export default class LinkedList {
   }
 }
 ```
+<br>
+
+```
+append(value) {
+  // 새로운 노드를 생성한다.
+  const newNode = new LinkedListNode(value)
+
+  // head가 없으면 생성한 노드로 head, tail을 할당한다.
+  if(!this.head) {
+    this.head = newNode;
+    this.tail = newNode;
+
+    return this
+  }
+
+  // tail의 다음 값(null)을 새 노드로 할당한다.
+  // tail의 값을 새 노드로 할당한다. 
+  this.tail.next = newNode;
+  this.tail = newNode;
+
+  return this;
+}
+``` 
