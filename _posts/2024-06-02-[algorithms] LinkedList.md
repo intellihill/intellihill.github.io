@@ -109,3 +109,38 @@ insert(value, rawindex) {
   return this;
 }
 ```
+<br>
+
+```
+delete(value) {
+  if(!this.head) {
+    return null;
+  }
+
+  let deleteNode = null;
+
+  while(this.head && this.compare.equal(this.head.value, value)) {
+    deleteNode = this.head;
+    this.head = this.head.next;
+  }
+
+  let currentNode = this.head;
+
+  if(currentNode !== null) {
+    while(currentNode.next) {
+      if(this.compare.equal(currentNode.next.value, value)) {
+        deleteNode = currentNode.next;
+        currentNode.next = currentNode.next.next;
+      } else {
+        currentNode = currentNode.next
+      }
+    }
+  }
+
+  if(ths.compare.equal(this.tail.value, value)) {
+    this.tail = currentNode;
+  }
+
+  return deleteNode
+}
+```
