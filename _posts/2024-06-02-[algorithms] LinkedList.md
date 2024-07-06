@@ -169,3 +169,30 @@ find({ value = undefined, callback = undefined }) {
   return null;
 }
 ```
+<br>
+
+```
+deleteTail() {
+  const deletedTail = this.tail;
+
+  if (this.head === this.tail) {
+    this.head = null;
+    this.tail = null;
+
+    return deletedTail;
+  }
+
+  let currentNode = this.head;
+  while (currentNode.next) {
+    if (!currentNode.next.next) {
+      currentNode.next = null;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
+  this.tail = currentNode;
+
+  return deletedTail;
+}
+```
+
