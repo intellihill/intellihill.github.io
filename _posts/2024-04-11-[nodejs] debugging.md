@@ -5,6 +5,7 @@ tag: nodejs
 ***
 
 [node 공홈 - Package](nodejs.org/docs/latest/api/packages.html)
+
 <br>
 
 ## node.js디버깅
@@ -19,10 +20,13 @@ Node.js command로 JS파일을 실행하고 싶을 때
 
 명시적으로 어떤 방식으로 모듈을 연결할지 알려줘야한다.
 
-import를 이용하는 ECMAScript의 경우에 2가지 방식으로 명시적방법이있다.
+import를 이용하는 ECMAScript의 경우에 2가지 방식으로 명시적방법이있다. 
+
+<br>
 
 1.  extension을 ECMAScript : .mjs / CommonJS: .cjs 로 만든다 (import에 포함된 경로또한 .mjs로)
 2.  package.json에 type을 설정한다.
+
 <br>
 
 ```
@@ -39,7 +43,11 @@ import를 이용하는 ECMAScript의 경우에 2가지 방식으로 명시적방
 [VisualCode공홈 - debugging](code.visualstudio.com/docs/editor/debugging)
 
 - root directory에 .vscode 폴더가 있다 
+
+<br>
+
 - .vscode 안에 launch.json 파일 안에 configuration을 작성한다.
+<br>
 	1. 왼쪽 Navigator에서 debug를 선택
 	2. Add config
 	3. launch.json에 Add Configuration (Node : Attach Process)
