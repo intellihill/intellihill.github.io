@@ -23,6 +23,7 @@ defaults:
 
 markdown: kramdown
 kramdown:
+  hard_wrap: true
   input: GFM
   syntax_highlighter: coderay
   coderay_line_numbers: nil
