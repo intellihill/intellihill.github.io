@@ -22,9 +22,9 @@ defaults:
       layout: "default"
 
 markdown: kramdown
+
 kramdown:
-  hard_wrap: false
   input: GFM
+  hard_wrap: true 
   syntax_highlighter: coderay
   coderay_line_numbers: nil
-
