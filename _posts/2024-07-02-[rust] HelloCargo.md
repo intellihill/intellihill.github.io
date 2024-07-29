@@ -31,8 +31,10 @@ $ cd hello_cargo
 <br>
 #### Build
 <br>
+
 - This command creates an executable file in _target/debug/hello_cargo
 <br>
+
 ```
 $ cargo build
 ```
