@@ -32,7 +32,7 @@ This page tells you a little bit about me.
   - MySQL
   
 <br>
-# 이동통신사 **t Universe 운영
+# 이동통신사 **t Universe 관리자페이지 개발
  
   Frontend
   - VUE를 이용하여 관리자페이지
@@ -40,4 +40,14 @@ This page tells you a little bit about me.
   Backend
   - JAVA SpringBoot
   - openApiGeneration
+  - MyBatis
+
+<br>
+# 한xx Golf SO페이지 BO페이지 개발
+
+  Frontend
+  - JSP
+
+  Backend
+  - JAVA SpringBoot
   - MyBatis
