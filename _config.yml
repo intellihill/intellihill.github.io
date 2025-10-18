@@ -9,12 +9,8 @@ description: "A blog about programming, technology, and life." # a short descrip
 markdown: kramdown
 
 # paginate setting
-plugins:
-  - jekyll-paginate-v2
-pagination:
-  enabled: true
-  per_page: 5
-  sort_reverse: true
+paginate: 4
+paginate_path: "/page/:num/"
 
 # markdown setting
 kramdown:

@@ -8,7 +8,7 @@ group :jekyll_plugins do
     # gem "jekyll-sitemap"
     gem "jekyll-feed"
     # gem "jekyll-archives"
-    gem "jekyll-paginate-v2"
+    gem "jekyll-paginate"
     # gem "jekyll-include-cache"
 end
 

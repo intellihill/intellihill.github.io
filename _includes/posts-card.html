@@ -1,7 +1,7 @@
 <article class="post-card">
     <a class="post-link" href="{{ post.url }}">
         <div class="post-image">
-        {% if include.post.image %}
+        {% if post.image %}
             <img src="{{ post.image | relative_url }}" 
                  alt="{{ post.title }}"
                  loading="lazy">
@@ -14,7 +14,7 @@
         <div class="post-content">
             <span class="post-category">C++</span>
             <h3 class="post-title">{{ post.title }}</h3>
-            <p class="post-description">{{ include.post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <p class="post-description">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
         </div>
     </a>
 </article>
