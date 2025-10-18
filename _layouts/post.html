@@ -2,14 +2,6 @@
 layout: default
 ---
 <h1>{{ page.title }}</h1>
-
-<p>
-  <a class="post__back" href="/blog.html">&lt;-- blog</a><br>
-  {{ page.date | date_to_string }}
-  {% assign tag = site.tags | where: 'short_name', page.tag | first %}
-  {% if tag %}
-    - <a href="{{ tag.url }}">{{ tag.name }}</a>
-  {% endif %}
-</p>
+<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
 
 {{ content }}

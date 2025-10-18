@@ -1,8 +1,21 @@
-<div class="header">
-  <h1>Intelli.hill</h1>
-    {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %} class="current" {% endif %}>
-      {{ item.name }}
+<header id="main_header">
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <i class="fa-brands fa-github"></i>
+      <a href="/">Jundaero's Blog</a>
+    </div>
+    <ul class="navbar-menu">
+      {% for item in site.data.navigation %}
+      <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+      {% endfor %}
+    </ul>
+    <ul class="navbar-icons">
+      <li><i class="fa-brands fa-github"></i></li>
+      <li><i class="fa-brands fa-github"></i></li>
+    </ul>
+    <a href="#" class="navbar-toggleBtn">
+      <i class="fa-solid fa-bars"></i>
     </a>
-    {% endfor %}
-</div>
+  </nav>
+</header>
+

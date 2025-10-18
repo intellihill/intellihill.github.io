@@ -1,24 +1,32 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <script src="https://kit.fontawesome.com/267cf912c6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <!-- 코드 하이라이팅 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- 커스텀 스타일 -->
+    <link rel="stylesheet" href="{{ '/assets/css/code.css' | relative_url }}">
   </head>
   <body>
-    <div class="about">
-        
-    </div>
-    <div class="wrapper">
-      {% include navigation.html %}
-      {{ content }}
-    </div>
-
-    <footer>
-      <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fintellihill.github.io&count_bg=%23BCBCBB&title_bg=%23555555&icon=instacart.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
-    </footer>
+    {% include navigation.html %}
+    <main>
+    {{ content }}
+    </main>
   </body>
+  <script>
+    /* 네비게이션 바 토글 버튼 스크립트 */
+    const toggleBtn = document.querySelector(".navbar-toggleBtn");
+    const menu = document.querySelector(".navbar-menu");
+    const icons = document.querySelector(".navbar-icons");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      icons.classList.toggle("active");
+    });
+  </script>
 </html>

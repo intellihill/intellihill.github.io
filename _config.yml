@@ -1,30 +1,25 @@
-domain: intellihill.github.io  
-url: http://intellihill.github.io
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "blog" # the name of your site, e.g. ACME Corp.
+email: "intelli.hill.@outlook.com" # the email address of the site author
+description: "A blog about programming, technology, and life." # a short description of your site
 
-collections:
-  tags:
-    output: true
 
-defaults:
-  - scope:
-      path: ""
-      type: "tags"
-    values:
-      layout: "tag"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-
+# Build settings
 markdown: kramdown
 
+# paginate setting
+plugins:
+  - jekyll-paginate-v2
+pagination:
+  enabled: true
+  per_page: 5
+  sort_reverse: true
+
+# markdown setting
 kramdown:
   input: GFM
-  hard_wrap: true 
-  syntax_highlighter: coderay
-  coderay_line_numbers: nil
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false

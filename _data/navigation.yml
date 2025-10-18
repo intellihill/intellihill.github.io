@@ -1,8 +1,6 @@
-- name: Home
+- name: 홈
   link: /
-- name: About
-  link: /about.html
-- name: Blog
-  link: /blog.html
-- name: Tag
-  link: /tag.html
+- name: 소개
+  link: /about/index.html
+- name: 블로그
+  link: /blog/index.html

@@ -1,0 +1,52 @@
+<article class="post-list-item">
+    <div class="post-list-item__thumbnail">
+        {% if include.post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+        {% else %}
+            <img src="/assets/images/octojekyll.png" alt="C++ IMG">
+        {% endif %}
+    </div>
+
+    <!-- 오른쪽: 콘텐츠 (60-70%) -->
+    <div class="post-list-item__content">
+        <!-- 상단: 메타 정보 -->
+        <div class="post-list-item__meta">
+            <time datetime="{{ include.post.date | date_to_xmlschema }}">
+                {{ include.post.date | date: "%Y.%m.%d" }}
+            </time>
+            {% if include.post.categories.size > 0 %}
+                <span class="post-list-item__category">
+                    {{ include.post.categories | first }}
+                </span>
+            {% endif %}
+        </div>
+
+        <!-- 제목 -->
+        <h3 class="post-list-item__title">
+            <a href="{{ include.post.url | relative_url }}">
+                {{ include.post.title }}
+            </a>
+        </h3>
+
+        <!-- 요약 -->
+        <p class="post-list-item__excerpt">
+            {{ include.post.excerpt | strip_html | truncatewords: 30 }}
+        </p>
+
+        <!-- 하단: 태그 및 더보기 -->
+        <div class="post-list-item__footer">
+            {% if include.post.tags.size > 0 %}
+                <div class="post-list-item__tags">
+                    {% for tag in include.post.tags limit:3 %}
+                        <span class="tag">#{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+            <a href="{{ include.post.url | relative_url }}" 
+               class="post-list-item__read-more">
+                더 읽기 →
+            </a>
+        </div>
+    </div>
+</article>

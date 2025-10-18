@@ -1,11 +1,11 @@
 ---
 layout: default
-title: home
+title: "Welcome to My Blog"
+pagination:
+  enabled: true
+  per_page: 4
+  permalink: "/page/:num/"
 ---
-<h1>{{ "developer" | upcase }}</h1>
-<h2>{{ "Daero Jung"}}</h2>
-<h2><a href="https://github.com/intellihill">github</a></h2>
-<br>
-dr
-test
 
+{% include banner.html %}
+{% include recent-posts.html %}

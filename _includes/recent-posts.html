@@ -1,0 +1,50 @@
+<section class="recent-posts">
+    <div class="recent-posts-title">
+        <p>블로그</p>
+    </div>
+    
+    <div class="posts-with-navigation">
+        <!-- 왼쪽 화살표 -->
+        <div class="nav-arrow nav-arrow-left">
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path }}#recent-posts">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            {% else %}
+                <span class="disabled">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            {% endif %}
+        </div>
+
+        <!-- 포스트 컨테이너 -->
+        <div class="recent-posts-container">
+            {% for post in paginator.posts %}
+            <div class="post">
+                {% include posts-card.html post=post %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- 오른쪽 화살표 -->
+        <div class="nav-arrow nav-arrow-right">
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path }}#recent-posts">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            {% else %}
+                <span class="disabled">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+</section>

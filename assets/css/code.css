@@ -1,0 +1,60 @@
+/* 하이라이트 컨테이너 */
+.highlight {
+  background: #263343 !important;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+/* pre 태그 */
+pre {
+  counter-reset: line;
+  background: #263343 !important;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0;
+  padding: 0;
+}
+/* code 태그 */
+pre code {
+  background: #263343 !important;
+  color: #f8f8f2;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  display: block;
+  counter-reset: line;
+}
+/* 줄 번호 */
+pre code .line {
+  display: block;
+  counter-increment: line;
+}
+/* 줄 번호 스타일 */
+pre code .line::before {
+  content: counter(line);
+  display: inline-block;
+  width: 2em;
+  padding-right: 1em;
+  margin-right: 1em;
+  text-align: right;
+  color: #666;
+  border-right: 1px solid #444;
+  user-select: none;
+}
+
+:not(pre) > code {
+  background-color: rgba(212, 148, 102, 0.15);
+  color: #d49466;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* pre 태그 */
+.highlight pre {
+  background: #263343 !important;
+  margin: 0;
+  padding: 0;
+}
