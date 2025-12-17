@@ -1,7 +1,67 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+<article class="post-article">
+  <!-- Post Header -->
+  <header class="post-header">
+    {% if page.tags.size > 0 %}
+      <span class="post-header__category">{{ page.tags | first }}</span>
+    {% elsif page.categories.size > 0 %}
+      <span class="post-header__category">{{ page.categories | first }}</span>
+    {% endif %}
 
-{{ content }}
+    <h1 class="post-header__title">{{ page.title }}</h1>
+
+    <div class="post-header__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %d, %Y" }}
+      </time>
+      {% if page.author %}
+        <span>by {{ page.author }}</span>
+      {% endif %}
+    </div>
+
+    {% if page.tags.size > 0 %}
+      <div class="post-header__tags">
+        {% for tag in page.tags %}
+          <span class="tag">#{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <!-- Post Content with TOC -->
+  <div class="post-layout">
+    <div class="post-content-wrapper">
+      <!-- Main Content -->
+      <div class="prose">
+        {{ content }}
+      </div>
+
+      <!-- Post Navigation -->
+      <nav class="post-navigation">
+        {% if page.previous.url %}
+          <a href="{{ page.previous.url | relative_url }}" class="post-nav-link prev">
+            <span class="post-nav-label"><i class="fa-solid fa-arrow-left"></i> Previous</span>
+            <span class="post-nav-title">{{ page.previous.title }}</span>
+          </a>
+        {% else %}
+          <div></div>
+        {% endif %}
+
+        {% if page.next.url %}
+          <a href="{{ page.next.url | relative_url }}" class="post-nav-link next">
+            <span class="post-nav-label">Next <i class="fa-solid fa-arrow-right"></i></span>
+            <span class="post-nav-title">{{ page.next.title }}</span>
+          </a>
+        {% endif %}
+      </nav>
+
+      <!-- Comments -->
+      {% include comments.html %}
+    </div>
+
+    <!-- Table of Contents Sidebar -->
+    {% include toc.html %}
+  </div>
+</article>

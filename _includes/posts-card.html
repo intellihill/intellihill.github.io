@@ -1,20 +1,29 @@
 <article class="post-card">
-    <a class="post-link" href="{{ post.url }}">
-        <div class="post-image">
-        {% if post.image %}
-            <img src="{{ post.image | relative_url }}" 
-                 alt="{{ post.title }}"
-                 loading="lazy">
-        {% else %}
-            <!-- 기본 이미지 또는 플레이스홀더 -->
-            <img src="/assets/images/octojekyll.png" 
-                 alt="{{ post.title }}">
-        {% endif %}
-        </div>
-        <div class="post-content">
-            <span class="post-category">C++</span>
-            <h3 class="post-title">{{ post.title }}</h3>
-            <p class="post-description">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        </div>
-    </a>
+  <a class="post-card-link" href="{{ post.url | relative_url }}">
+    <div class="post-card-image">
+      {% if post.image %}
+        <img src="{{ post.image | relative_url }}"
+             alt="{{ post.title }}"
+             loading="lazy">
+      {% else %}
+        <img src="{{ '/assets/images/octojekyll.png' | relative_url }}"
+             alt="{{ post.title }}"
+             loading="lazy">
+      {% endif %}
+    </div>
+    <div class="post-card-content">
+      {% if post.tags.size > 0 %}
+        <span class="post-card-category">{{ post.tags | first }}</span>
+      {% elsif post.categories.size > 0 %}
+        <span class="post-card-category">{{ post.categories | first }}</span>
+      {% endif %}
+      <h3 class="post-card-title">{{ post.title }}</h3>
+      <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+      <div class="post-card-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%Y.%m.%d" }}
+        </time>
+      </div>
+    </div>
+  </a>
 </article>

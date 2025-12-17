@@ -1,32 +1,62 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: 'ko' }}" data-theme="light">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <script src="https://kit.fontawesome.com/267cf912c6.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-    <!-- 코드 하이라이팅 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+    <!-- Code Highlighting - Theme aware -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" media="(prefers-color-scheme: dark)">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-    <!-- 커스텀 스타일 -->
+
+    <!-- Custom code styles -->
     <link rel="stylesheet" href="{{ '/assets/css/code.css' | relative_url }}">
+
+    <!-- Theme initialization (inline to prevent flash) -->
+    <script>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
+    {% seo %}
+    {% feed_meta %}
   </head>
   <body>
     {% include navigation.html %}
-    <main>
-    {{ content }}
+
+    <main class="main-content">
+      {{ content }}
     </main>
+
+    {% include footer.html %}
+
+    <!-- Theme Toggle & Navigation Script -->
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+
+    <!-- Initialize Highlight.js -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        hljs.highlightAll();
+      });
+    </script>
   </body>
-  <script>
-    /* 네비게이션 바 토글 버튼 스크립트 */
-    const toggleBtn = document.querySelector(".navbar-toggleBtn");
-    const menu = document.querySelector(".navbar-menu");
-    const icons = document.querySelector(".navbar-icons");
-    toggleBtn.addEventListener("click", () => {
-      menu.classList.toggle("active");
-      icons.classList.toggle("active");
-    });
-  </script>
 </html>

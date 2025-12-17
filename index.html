@@ -1,7 +1,37 @@
 ---
 layout: default
-title: "Welcome to My Blog"
+title: "Home"
 ---
 
-{% include banner.html %}
-{% include recent-posts.html %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-title">Jundaero's Blog</h1>
+    <p class="hero-description">{{ site.description | default: "A blog about programming, technology, and life." }}</p>
+  </div>
+</section>
+
+<!-- Recent Posts Section -->
+<section class="recent-posts container">
+  <div class="section-header">
+    <h2 class="section-title">Recent Posts</h2>
+    <a href="{{ '/blog/' | relative_url }}" class="section-link">
+      View all posts <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <div class="posts-grid">
+    {% assign recent_posts = site.posts | slice: 0, 6 %}
+    {% for post in recent_posts %}
+      {% include posts-card.html %}
+    {% endfor %}
+  </div>
+
+  {% if site.posts.size > 6 %}
+  <div class="pagination">
+    <a href="{{ '/blog/' | relative_url }}" class="pagination-btn">
+      View all posts <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+  {% endif %}
+</section>

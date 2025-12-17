@@ -1,21 +1,43 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "blog" # the name of your site, e.g. ACME Corp.
+title: "Jundaero's Blog" # the name of your site
 email: "intelli.hill.@outlook.com" # the email address of the site author
-description: "A blog about programming, technology, and life." # a short description of your site
-
+description: "A blog about programming, technology, and life."
+lang: ko
 
 # Build settings
 markdown: kramdown
 
-# paginate setting
-paginate: 4
+# Paginate setting
+paginate: 6
 paginate_path: "/page/:num/"
 
-# markdown setting
+# Markdown setting
 kramdown:
   input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
       line_numbers: false
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-paginate
+
+# Giscus Comments Configuration
+giscus:
+  repo: "intellihill/intellihill.github.io"
+  repo_id: "R_kgDOLBVhyw"
+  category: "General"
+  category_id: "DIC_kwDOLBVhy84Cz8AH"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
