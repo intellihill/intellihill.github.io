@@ -414,6 +414,7 @@ button {
   background: transparent;
   border-radius: var(--radius-md);
   cursor: pointer;
+  overflow: visible;
 
   @media (min-width: 768px) {
     display: none;
@@ -421,6 +422,7 @@ button {
 }
 
 .hamburger {
+  display: block;
   width: 18px;
   height: 2px;
   background: var(--color-text-primary);
@@ -466,13 +468,16 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
   background: var(--color-bg-primary);
-  padding: var(--space-6);
+  padding: var(--space-8);
   z-index: calc(var(--z-sticky) - 1);
   overflow-y: auto;
 
   &.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   @media (min-width: 768px) {
@@ -483,12 +488,12 @@ button {
 .nav-mobile-links {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-4);
 
   a {
     display: block;
-    padding: var(--space-4);
-    font-size: var(--text-lg);
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-xl);
     font-weight: var(--font-medium);
     color: var(--color-text-primary);
     border-radius: var(--radius-md);
