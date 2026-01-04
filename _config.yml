@@ -1,8 +1,8 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "Jundaero's Blog" # the name of your site
+title: "Jungdaero's Blog" # the name of your site
 email: "intelli.hill.@outlook.com" # the email address of the site author
-description: "A blog about programming, technology, and life."
+description: "프로그래밍과 기술을 담은 개발 블로그입니다.."
 lang: ko
 
 # Build settings
