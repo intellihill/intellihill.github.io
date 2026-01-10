@@ -2,7 +2,7 @@
 layout: post
 title: "Fleeting에서 Permanent로 메모를 발전시킨다"
 date: 2025-10-02
-tags: [zettelkasten, memo]
+tags: [zettelkasten, memo, obsidian]
 image: /assets/images/obsidian.png
 type: permanent
 ---

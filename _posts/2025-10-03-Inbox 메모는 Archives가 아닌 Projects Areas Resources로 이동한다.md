@@ -2,7 +2,7 @@
 layout: post
 title: "Inbox 메모는 Archives가 아닌 Projects/Areas/Resources로 이동한다"
 date: 2025-10-03
-tags: [para, note-taking, workflow]
+tags: [para, memo, obsidian]
 image: /assets/images/obsidian.png
 type: permanent
 ---

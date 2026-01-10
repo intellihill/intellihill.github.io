@@ -15,7 +15,7 @@ title: Blog
 <section class="container">
   <!-- Filter Buttons -->
   <div class="posts-filter">
-    <div class="filter-container">
+    <div class="filter-container" id="filterContainer">
       <button class="filter-btn active" data-filter="all">
         All <span class="count">({{ site.posts.size }})</span>
       </button>
@@ -37,6 +37,12 @@ title: Blog
         </button>
       {% endfor %}
     </div>
+    <button class="filter-toggle" id="filterToggle">
+      <span class="text">더보기</span>
+      <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
   </div>
 
   <!-- Posts List -->
@@ -69,6 +75,28 @@ document.addEventListener('DOMContentLoaded', function() {
   const postsPerPage = 6;
   let currentPage = 1;
   let currentFilter = 'all';
+
+  // Filter toggle (더보기/접기)
+  const filterContainer = document.getElementById('filterContainer');
+  const filterToggle = document.getElementById('filterToggle');
+
+  function checkFilterOverflow() {
+    if (filterContainer.scrollHeight > filterContainer.clientHeight + 10) {
+      filterToggle.classList.add('visible');
+    } else {
+      filterToggle.classList.remove('visible');
+    }
+  }
+
+  filterToggle.addEventListener('click', function() {
+    const isExpanded = filterContainer.classList.toggle('expanded');
+    this.classList.toggle('expanded', isExpanded);
+    this.querySelector('.text').textContent = isExpanded ? '접기' : '더보기';
+  });
+
+  // Check on load and resize
+  checkFilterOverflow();
+  window.addEventListener('resize', checkFilterOverflow);
 
   // Get filtered posts
   function getFilteredPosts() {

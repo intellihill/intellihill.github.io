@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [jekyll, pagination, blog]
+tags: [jekyll, blog]
 image: /assets/images/octojekyll.png
 ---
 # Jekyll Blog에서 Paginator 구현하기

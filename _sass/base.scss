@@ -839,6 +839,7 @@ button {
 // Filter Buttons
 // ------------------------------------------------
 .posts-filter {
+  margin-top: var(--space-8);
   margin-bottom: var(--space-8);
 }
 
@@ -846,6 +847,46 @@ button {
   display: flex;
   gap: var(--space-3);
   flex-wrap: wrap;
+  max-height: 40px; // 1줄
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+
+  &.expanded {
+    max-height: 500px;
+  }
+}
+
+.filter-toggle {
+  display: none;
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-tertiary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+
+  &:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  &.visible {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .icon {
+    transition: transform var(--transition-fast);
+  }
+
+  &.expanded .icon {
+    transform: rotate(180deg);
+  }
 }
 
 .filter-btn {

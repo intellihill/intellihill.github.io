@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [cpp, optimization, attribute]
+tags: [cpp, attribute]
 image: /assets/images/c++.png
 ---
 # `__attribute__` 컴파일러 확장 기능
