@@ -45,41 +45,128 @@ title: Blog
       {% include posts-list.html post=post %}
     {% endfor %}
   </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button class="pagination-btn pagination-prev" disabled>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="pagination-numbers"></div>
+    <button class="pagination-btn pagination-next">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
 </section>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const postItems = document.querySelectorAll('.post-item');
+  const postItems = Array.from(document.querySelectorAll('.post-item'));
+  const postsPerPage = 6;
+  let currentPage = 1;
+  let currentFilter = 'all';
 
+  // Get filtered posts
+  function getFilteredPosts() {
+    return postItems.filter(function(item) {
+      if (currentFilter === 'all') return true;
+      const tags = item.getAttribute('data-tags') || '';
+      const tagList = tags.split(' ').filter(function(t) { return t.length > 0; });
+      return tagList.includes(currentFilter);
+    });
+  }
+
+  // Render pagination
+  function renderPagination(filteredPosts) {
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+    const paginationNumbers = document.querySelector('.pagination-numbers');
+    const prevBtn = document.querySelector('.pagination-prev');
+    const nextBtn = document.querySelector('.pagination-next');
+
+    // Hide pagination if only one page
+    const pagination = document.querySelector('.pagination');
+    if (totalPages <= 1) {
+      pagination.style.display = 'none';
+      return;
+    }
+    pagination.style.display = 'flex';
+
+    // Update prev/next buttons
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+
+    // Generate page numbers
+    paginationNumbers.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      const pageBtn = document.createElement('button');
+      pageBtn.className = 'pagination-number' + (i === currentPage ? ' active' : '');
+      pageBtn.textContent = i;
+      pageBtn.addEventListener('click', function() {
+        currentPage = i;
+        renderPosts();
+      });
+      paginationNumbers.appendChild(pageBtn);
+    }
+  }
+
+  // Render posts
+  function renderPosts() {
+    const filteredPosts = getFilteredPosts();
+    const startIndex = (currentPage - 1) * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+
+    postItems.forEach(function(item) {
+      item.classList.add('hidden');
+    });
+
+    filteredPosts.forEach(function(item, index) {
+      if (index >= startIndex && index < endIndex) {
+        item.classList.remove('hidden');
+        item.style.animationDelay = ((index - startIndex) * 50) + 'ms';
+      }
+    });
+
+    renderPagination(filteredPosts);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Filter button click
   filterBtns.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      const filter = this.getAttribute('data-filter');
+      currentFilter = this.getAttribute('data-filter');
+      currentPage = 1;
 
-      // Update active state
       filterBtns.forEach(function(b) {
         b.classList.remove('active');
       });
       this.classList.add('active');
 
-      // Filter posts
-      postItems.forEach(function(item, index) {
-        const tags = item.getAttribute('data-tags') || '';
-        const tagList = tags.split(' ').filter(function(t) { return t.length > 0; });
-
-        if (filter === 'all' || tagList.includes(filter)) {
-          item.classList.remove('hidden');
-          item.style.animationDelay = (index * 50) + 'ms';
-        } else {
-          item.classList.add('hidden');
-        }
-      });
+      renderPosts();
     });
   });
 
-  // Show all posts initially
-  postItems.forEach(function(item) {
-    item.classList.remove('hidden');
+  // Prev/Next button click
+  document.querySelector('.pagination-prev').addEventListener('click', function() {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPosts();
+    }
   });
+
+  document.querySelector('.pagination-next').addEventListener('click', function() {
+    const filteredPosts = getFilteredPosts();
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPosts();
+    }
+  });
+
+  // Initial render
+  renderPosts();
 });
 </script>

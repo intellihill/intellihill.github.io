@@ -721,12 +721,13 @@ button {
   @media (min-width: 768px) {
     width: 300px;
     height: auto;
+    aspect-ratio: 16/9;
   }
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform var(--transition-slow);
   }
 }
@@ -966,6 +967,7 @@ button {
 
 .post-content-wrapper {
   min-width: 0;
+  max-width: var(--container-prose);
 }
 
 // ------------------------------------------------
@@ -1427,10 +1429,16 @@ button {
     color: var(--color-text-inverse);
   }
 
-  &.disabled {
+  &.disabled,
+  &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: var(--space-2);
 }
 
 // ------------------------------------------------
