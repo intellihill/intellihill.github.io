@@ -19,7 +19,7 @@ image: /assets/images/telegram.png
    ```
    HTTP API: 1234567890:ABCdefGHIjklMNOpqrsTUVwxyz
    ```
- 
+  
 ### 1.2 Chat ID 획득
 1. 생성한 봇에게 텔레그램에서 아무 메시지나 전송
 2. 브라우저에서 아래 URL 접속 (토큰 부분 교체):
