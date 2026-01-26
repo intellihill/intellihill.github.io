@@ -7,7 +7,7 @@ image: /assets/images/telegram.png
 # Telegram Error Notification 설정 가이드
 
 백엔드에서 서버 에러 발생 시 텔레그램으로 알림을 받는 기능입니다.
-
+ 
 ## 1. 텔레그램 봇 생성
 
 ### 1.1 BotFather에서 봇 생성
